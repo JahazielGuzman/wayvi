@@ -10,6 +10,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/db/spotify_creds.rb
 !/log/.keep
 !/tmp/.keep
 
