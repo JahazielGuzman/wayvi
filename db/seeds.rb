@@ -39,4 +39,4 @@ end
 
 user1 = User.create(username: 'peter', password_digest: 'peterpass', name: 'Peter', city: 'New York City')
 playlist1 = Playlist.create(name: 'Favorites', user_id: user1.id)
-songlist1 = SongList.create(playlist_id: playlist1.id, song_id: Song.all.sample)
+songlist1 = SongList.create(playlist: playlist1, song: Song.all.sample)
