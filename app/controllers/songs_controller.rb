@@ -2,7 +2,18 @@ class SongsController < ApplicationController
 
   def index
     @songs = Song.all
-    render json: @songs
+    songs = @songs.map { |song|
+      {
+        artist_name: song.artist.name,
+        artist_id: song.artist.id,
+        genre: song.genre,
+        id: song.id,
+        name: song.name,
+        path: song.path,
+        year: song.year
+      }
+    }
+    render json: songs
   end
 
   def create
