@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_09_09_151517) do
     t.string "year"
     t.string "genre"
     t.string "path"
+    t.string "artist_name"
     t.bigint "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

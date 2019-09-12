@@ -7,7 +7,7 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.all.find(params[:id])
-    render json: @playlist
+    render json: @playlist.songs
   end
 
   def create
