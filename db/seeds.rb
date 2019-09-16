@@ -15,7 +15,7 @@ require 'rspotify'
 artists = ["SWV", "6lack", "Imagine Dragons", "Drake", "Beyonce", "Faith Hill", "J Balvin", "Maroon 5", "Zedd", "Bruno Mars", "Maluma", "Jodeci", "Willie Nelson", "Daddy Yankee", "Luis Miguel", "Cristian Castro", "Wisin & Yandel"]
 genres = ["R & B", "R & B", "Pop", "Hip Hop", "R & B", "Country", "Reggaeton","Pop", "EDM", "Pop", "Reggaeton", "R & B", "Country", "Reggaeton", "Latin Pop", "Latin Pop", "Reggaeton"]
 
-RSpotify.authenticate("2efe9f319a8b490a8502bed449e2a889", "3c4e0f22f6e24b8b8b89991628343e46")
+RSpotify.authenticate(ACCOUNT,SECRET)
 for i in 0...artists.length do
 
   artist = RSpotify::Artist.search(artists[i]).first
