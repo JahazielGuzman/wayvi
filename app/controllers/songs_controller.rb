@@ -11,6 +11,7 @@ class SongsController < ApplicationController
         name: song.name,
         path: song.path,
         year: song.year,
+        image: song.image,
         created_at: song.created_at,
         updated_at: song.updated_at
       }
