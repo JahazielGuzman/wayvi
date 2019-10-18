@@ -15,7 +15,7 @@ class AuthController < ApplicationController
   end
 
   def getUser
-    token = params["token"].split(' ')[1]
+    token = request.headers["Authorization"].split(' ')[1]
     decoded_token = JWT.decode(token, 'blablaSECRETblabla', true, algorithm: 'HS256')
     user_id = decoded_token[0]["user_id"]
     user = User.find_by(id: user_id)
