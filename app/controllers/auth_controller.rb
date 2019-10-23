@@ -8,7 +8,7 @@ class AuthController < ApplicationController
       payload = {user_id: user.id, user_city: user.city}
       # payload, secret, algorithm
       token = JWT.encode(payload, 'blablaSECRETblabla', 'HS256')
-      render json: {token: "Bearer #{token}"}
+      render json: {user: {id: user.id, username: user.username, name: user.name} , token: "Bearer #{token}"}
     else
       render json: {token: ""}
     end
