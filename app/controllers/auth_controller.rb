@@ -23,22 +23,23 @@ class AuthController < ApplicationController
       render json: {token: ""}
     else
       created = User.create(username: username, name: thename, password: password)
-      payload = {user: created.id}
+      payload = {user_id: created.id}
       # payload, secret, algorithm
       token = JWT.encode(payload, 'blablaSECRETblabla', 'HS256')
       render json: {user: {id: created.id, username: created.username, name: created.name} , token: "Bearer #{token}"}
     end
   end
 
-  def getUser
+  def establish_session
     token = request.headers["Authorization"].split(' ')[1]
+    # byebug
     decoded_token = JWT.decode(token, 'blablaSECRETblabla', true, algorithm: 'HS256')
     user_id = decoded_token[0]["user_id"]
     user = User.find_by(id: user_id)
     if user
-      render json: {id: user_id, username: user.username, name: user.name}
+      render json: {user: {id: user_id, username: user.username, name: user.name}}
     else
-      render json: {}
+      render json: {token: ""}
     end
   end
 
