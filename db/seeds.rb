@@ -88,6 +88,7 @@ for i in 0...artists.length do
     popularity: artist.popularity
   )
   track_arr.each do |t|
+    sleep(1)
     if (t.preview_url)
       Song.create(
         name: t.name,
