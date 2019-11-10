@@ -1,7 +1,6 @@
-# README
+# Wayvi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Wayvi is a music streaming service where you can play your favorite songs from top artists and even create your own playlist with an account
 
 Things you may want to cover:
 
