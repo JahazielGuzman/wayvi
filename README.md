@@ -31,5 +31,6 @@ and finally
 * Ruby on Rails
 * React.js
 * PostgreSQL
+* JSON Web Tokens
 * ActiveRecord
 * RSpotify Gem
